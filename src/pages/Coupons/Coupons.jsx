@@ -71,11 +71,6 @@ function Coupons() {
       sortable: true,
     },
     {
-      name: "Is Active",
-      selector: (row) => (row.isActive ? "Yes" : "No"),
-      sortable: true,
-    },
-    {
       name: "Created At",
       selector: (row) => formatDate(row.createdAt),
       sortable: true,

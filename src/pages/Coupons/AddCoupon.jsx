@@ -30,8 +30,13 @@ const AddCoupon = () => {
       const endpoint = data
         ? `/coupon/update-coupon/${data._id}`
         : "/coupon/create-coupon";
-
-      const response = await axiosInstance.post(endpoint, formData);
+      const method = isEdit ? "PUT" :"POST"
+      const response = await axiosInstance({
+        method,
+        url:endpoint,
+        data:formData,
+      });
+      
       if (response.status === 200) {
 
         alert(response?.data?.message);

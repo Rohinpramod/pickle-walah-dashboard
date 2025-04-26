@@ -46,21 +46,46 @@ const RestaurantsOrders = () => {
       sortable: true,
       cell: (row) => (
         <span
-          className="text-blue-500 cursor-pointer"
-          onClick={() => handleRestaurantClick(row)}
+          className={`cursor-pointer ${row.status === 'pending' ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500'}`}
+          onClick={() => {
+            if (row.status !== 'pending') {
+              handleRestaurantClick(row);
+            }
+          }}
         >
           {row.user.name}
         </span>
       ),
     },
     {
-      name: " Email",
+      name: "Status",
+      selector: (row) => row.status,
+      sortable: true,
+      cell: (row) => (
+        <span
+          className={`cursor-pointer ${row.status === 'pending' ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500'}`}
+          onClick={() => {
+            if (row.status !== 'pending') {
+              handleRestaurantClick(row);
+            }
+          }}
+        >
+          {row.status}
+        </span>
+      ),
+    },
+    {
+      name: "Email",
       selector: (row) => row.email,
       sortable: true,
       cell: (row) => (
         <span
-          className="text-blue-500 cursor-pointer"
-          onClick={() => handleRestaurantClick(row)}
+          className={`cursor-pointer ${row.status === 'pending' ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500'}`}
+          onClick={() => {
+            if (row.status !== 'pending') {
+              handleRestaurantClick(row);
+            }
+          }}
         >
           {row.user.email}
         </span>
@@ -72,8 +97,12 @@ const RestaurantsOrders = () => {
       sortable: true,
       cell: (row) => (
         <span
-          className="text-blue-500 cursor-pointer"
-          onClick={() => handleRestaurantClick(row)}
+          className={`cursor-pointer ${row.status === 'pending' ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500'}`}
+          onClick={() => {
+            if (row.status !== 'pending') {
+              handleRestaurantClick(row);
+            }
+          }}
         >
           {row.user.phone}
         </span>
@@ -85,18 +114,17 @@ const RestaurantsOrders = () => {
       sortable: true,
       cell: (row) => (
         <span
-          className="text-blue-500 cursor-pointer"
-          onClick={() => handleRestaurantClick(row)}
+          className={`cursor-pointer ${row.status === 'pending' ? 'text-gray-400 cursor-not-allowed' : 'text-blue-500'}`}
+          onClick={() => {
+            if (row.status !== 'pending') {
+              handleRestaurantClick(row);
+            }
+          }}
         >
-          {row.deliveryAddress.state},
-          {row.deliveryAddress.city},
-          {row.deliveryAddress.street},
-          {row.deliveryAddress.postalCode}
+          {row.deliveryAddress.state}, {row.deliveryAddress.city}, {row.deliveryAddress.street}, {row.deliveryAddress.postalCode}
         </span>
       ),
     },
-    
-    
   ];
 
   return (

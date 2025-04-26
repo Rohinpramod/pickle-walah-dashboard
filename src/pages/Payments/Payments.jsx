@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import useFetch from "../../Hooks/UseFetch";
 
-
 function Payments() {
-    const [paymentsData, isLoading, error] = useFetch(`/order/get-all-payments`);
+  const [paymentsData, isLoading, error] = useFetch(`/order/get-all-payments`);
+
+  // Calculate the total amount
+  const totalAmount = paymentsData?.data.reduce((total, payment) => total + payment.amount, 0) || 0;
 
   // Define columns for the DataTable
   const columns = [
@@ -50,13 +52,20 @@ function Payments() {
         ) : error ? (
           <p className="text-center text-red-500">{error}</p>
         ) : (
-          <DataTable
-            columns={columns}
-            data={paymentsData?.data || []}
-            pagination
-            highlightOnHover
-            responsive
-          />
+          <>
+            <DataTable
+              columns={columns}
+              data={paymentsData?.data || []}
+              pagination
+              highlightOnHover
+              responsive
+            />
+            {/* Display the total amount */}
+            <div className="p-4 bg-gray-100 text-right font-bold">
+              <span>Total Amount: </span>
+              <span>{totalAmount.toFixed(2)}</span>
+            </div>
+          </>
         )}
       </div>
     </div>
