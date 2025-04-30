@@ -13,6 +13,7 @@ import Login from "../componentes/Login/Login";
 import User from "../pages/Users/Users";
 import Pickles from "../pages/Restaurant/AllRestaurant";
 import EditPickle from "../pages/Restaurant/EditRestaurant";
+import Profile from "../pages/Profile/Profile";
 
 const AdminRouter = () => {
   return (
@@ -46,8 +47,8 @@ const AdminRouter = () => {
                   element={< AddCoupon  pageTitle="Add Coupon" />}
                 />
                 <Route 
-                  path="/restaurantsOrders"
-                  element={<RestaurantsOrders  pageTitle="RestaurantsOrders" />}
+                  path="/Orders"
+                  element={<RestaurantsOrders  pageTitle="Orders" />}
                 />
                 <Route 
                   path="/orders/:id"
@@ -60,6 +61,10 @@ const AdminRouter = () => {
                 <Route 
                   path="/users"
                   element={<User pageTitle="Users" />}
+                />
+                <Route 
+                  path="/profile"
+                  element={<Profile pageTitle="Profile" />}
                 />
                 <Route path="*" element={<NotFound pageTitle="404 - Not Found" />} />
               </Routes>

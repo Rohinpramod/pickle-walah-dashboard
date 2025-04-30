@@ -20,9 +20,9 @@ function Login() {
         const response = await axiosInstance.post("/user/login",data);
         console.log("response===",response);
 
-        alert("Log-in success");
+        toast.success("Log-in success");
         navigate("/home");
-        window.location.reload()
+        // window.location.reload()
     } catch (error) {
         console.log(error);
     }

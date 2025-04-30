@@ -13,7 +13,7 @@ function SideBar() {
     { path: '/home', label: 'Dashboard', icon: <HomeIcon className="w-5 h-5" /> },
     { path: '/pickles', label: 'Pickles', icon: <ChefHat className="w-5 h-5" /> },
     { path: '/coupons', label: 'All Coupons', icon: <TagIcon className="w-5 h-5" /> },
-    { path: '/restaurantsOrders', label: 'All Restaurant Orders', icon: <ShoppingCartIcon className="w-5 h-5" /> },
+    { path: '/Orders', label: ' Orders', icon: <ShoppingCartIcon className="w-5 h-5" /> },
     { path: '/payments', label: 'Payments', icon: <ShoppingCartIcon className="w-5 h-5"/>},
     {path:'/users', label:'Users',icon:<FaUsersLine className='w-5 h-5' />}
   ];

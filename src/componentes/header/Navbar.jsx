@@ -33,7 +33,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-gray-800 text-white rounded-lg shadow-lg mt-3 w-52 p-2">
               <li>
-                <a className="justify-between flex items-center">
+                <a className="justify-between flex items-center" href='/profile'>
                   <span>Profile</span>
                   <span className="badge badge-sm badge-secondary">New</span>
                 </a>
